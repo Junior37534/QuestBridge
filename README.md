@@ -34,8 +34,8 @@ Ensure all of the following requirements are met before starting:
   1. Open Quest Settings.
   2. Navigate to **Experimental**.
   3. Toggle **Seamless Multitasking** to **ON**.
-  > [!IMPORTANT]
-  > Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
+> [!IMPORTANT]
+> Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
 - **Minecraft: Java Edition** running via the **Amethyst-Android** launcher:
   1. Download the latest APK from the [Amethyst Releases Page](https://github.com/AngelAuraMC/Amethyst-Android).
   2. Log in using your Microsoft Account.
@@ -78,8 +78,8 @@ Ensure all of the following requirements are met before starting:
    - Press the **Meta button** on the right controller to bring up your Quest 2D app panel.
    - Drag the Minecraft window into a comfortable 3D space in front of you.
 6. **Controller Positioning / Avoid Pointer Lock**:
-   > [!IMPORTANT]
-   > **Do not point your controller beams directly at the Minecraft window while playing.** 
+ > [!IMPORTANT]
+ > **Do not point your controller beams directly at the Minecraft window while playing.** 
    > Doing so will shift the headset's focus away from the QuestBridge browser tab and break input capture. Keep your controllers aimed slightly downward or away from the panel while executing actions.
    > 
    > *Note: Pointing directly at the panel remains useful when navigating Minecraft’s inventories, chat, or game settings.*
