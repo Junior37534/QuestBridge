@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
   </a>
   <a href="https://github.com/junior/QuestBridge/releases">
-    <img src="https://img.shields.io/github/v/release/junior/QuestBridge.svg?color=blue" alt="Release" />
+    <img src="https://img.shields.io/github/v/release/Junior37534/QuestBridge.svg?color=blue" alt="Release" />
   </a>
   <a href="#requirements">
     <img src="https://img.shields.io/badge/Platform-Meta%20Quest%203%20%2F%203S%20%2F%202-brightgreen.svg" alt="Platform: Meta Quest 3 / 3S / 2" />
