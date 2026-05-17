@@ -2,7 +2,12 @@ package com.questbridge;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.HoverEvent;
+import net.minecraft.network.chat.TextColor;
 
 public class QuestBridgeMod implements ClientModInitializer {
     private static final ControllerState controllerState = new ControllerState();
@@ -27,6 +32,21 @@ public class QuestBridgeMod implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             inputInjector.tick((Minecraft) (Object) client);
+        });
+
+        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            if (client.player != null) {
+                Component message = Component.literal("§7[§aQuestBridge§7] ")
+                    .append(Component.literal("Click here to open http://localhost:7373")
+                        .withStyle(style -> style
+                            .withClickEvent(new ClickEvent.OpenUrl(java.net.URI.create("http://localhost:7373")))
+                            .withHoverEvent(new HoverEvent.ShowText(Component.literal("Open controller web panel in Quest Browser")))
+                            .withUnderlined(true)
+                            .withColor(TextColor.fromRgb(0x1C7BFF))
+                        )
+                    );
+                client.player.sendSystemMessage(message);
+            }
         });
     }
 

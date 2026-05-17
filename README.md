@@ -1,22 +1,41 @@
-# QuestBridge
+<div align="center">
+  <img src="src/main/resources/icon.png" width="128" height="128" alt="QuestBridge Logo" />
+  <h1>QuestBridge</h1>
+  <p>Bridge Meta Quest 3, 3S, or 2 controllers directly to standalone Minecraft Java Edition via WebXR</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
-[![Release](https://img.shields.io/github/v/release/junior/QuestBridge.svg?color=blue)](https://github.com/junior/QuestBridge/releases)
-[![Platform: Meta Quest 3](https://img.shields.io/badge/Platform-Meta%20Quest%203-brightgreen.svg)](#requirements)
+  <a href="#license">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
+  </a>
+  <a href="https://github.com/junior/QuestBridge/releases">
+    <img src="https://img.shields.io/github/v/release/junior/QuestBridge.svg?color=blue" alt="Release" />
+  </a>
+  <a href="#requirements">
+    <img src="https://img.shields.io/badge/Platform-Meta%20Quest%203%20%2F%203S%20%2F%202-brightgreen.svg" alt="Platform: Meta Quest 3 / 3S / 2" />
+  </a>
+</div>
 
 QuestBridge is a Minecraft client-side Fabric mod that bridges Meta Quest 3 controllers directly to Minecraft Java Edition running natively on the headset. It hosts a local WebXR webpage that captures controller inputs and sends them to the running game instance via a low-latency WebSocket server, enabling a console-like immersive experience entirely standalone without a PC.
+
+> [!NOTE]
+> This mod was developed specifically for **Minecraft 26.1.2** (Fabric, running inside Amethyst-Android) and has only been tested on this version. Compatibility with other versions is not tested or guaranteed.
 
 ---
 
 ## Demo
 
-<!-- VIDEO: Immersive gameplay demo showing the WebXR background rendering (Space/Passthrough) alongside Minecraft running as a 3D panel with smooth controller tracking -->
+Confira o mod funcionando na prática com o player abaixo (carregando o ambiente 3D dinâmico ao fundo e a tela do jogo em foco no Meta Quest 3):
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/b3d941bd-ead1-49a7-99f9-02467f74109c" width="100%" controls>
+    Seu navegador não suporta a exibição de vídeos HTML5.
+  </video>
+</p>
 
 ---
 
 ## Features
 
-- **Standalone Quest 3 Support**: Play Minecraft Java Edition in VR/MR directly on the headset with zero PC connection required.
+- **Standalone VR/MR Support**: Play Minecraft Java Edition directly on the headset (Quest 3, 3S, or 2) with zero PC connection required.
 - **Low-Latency Controller Mapping**: WebXR-based controller capture forwarded over a high-speed local WebSocket (port 7374).
 - **Premium Immersive Environments**: Smooth switching between native MR Passthrough, solid backgrounds, custom 360° Skyboxes, and a high-fidelity procedural 3D Space background with dynamic stars and shooting stars.
 - **Integrated Controller Haptics**: Native in-game action feedback (breaking blocks, taking damage, eating) transmitted back to controllers with customizable intensity.
@@ -28,21 +47,36 @@ QuestBridge is a Minecraft client-side Fabric mod that bridges Meta Quest 3 cont
 
 Ensure all of the following requirements are met before starting:
 
-- **Meta Quest 3** (optimized and tested for Quest 3).
+- **Meta Quest 3, 3S, or 2** (actively developed and tested on Quest 3; should work on Quest 2 and 3S as well).
 - **Developer Mode Enabled** on the headset. Refer to the [Official Meta Developer Guide](https://developer.oculus.com/documentation/native/android/mobile-device-setup/) for setup steps.
 - **"Seamless Multitasking"** enabled in the headset:
   1. Open Quest Settings.
   2. Navigate to **Experimental**.
   3. Toggle **Seamless Multitasking** to **ON**.
-> [!IMPORTANT]
-> Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
+
+  > [!IMPORTANT]
+  > Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
+
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/93bbc0df-a2f2-407d-a402-854b465cf19f" width="600" alt="Enable Seamless Multitasking Screenshot" />
+  </p>
+
+- **"Disable Hand Gestures"** (Highly recommended to avoid controller input conflicts):
+  1. Open Quest Settings.
+  2. Navigate to **Movement Tracking** (or **Devices** -> **Hands and Controllers**).
+  3. Turn off or adjust **Hand Tracking / Gestures** to prevent accidental pinch gestures from disrupting controller beam/joystick inputs.
+
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/95897783-abe5-45eb-802b-91f0b846d27a" width="600" alt="Disable Hand Gestures Screenshot" />
+  </p>
+
 - **Minecraft: Java Edition** running via the **Amethyst-Android** launcher:
-  1. Download the latest APK from the [Amethyst Releases Page](https://github.com/AngelAuraMC/Amethyst-Android).
+  1. Download the latest APK from the [Amethyst Releases Page](https://github.com/AngelAuraMC/Amethyst-Android/releases).
   2. Log in using your Microsoft Account.
   3. Launch vanilla Minecraft once to generate required engine files.
   4. Create and configure a **Fabric** profile.
-- **Controlify** mod installed in your Fabric profile mods directory.
-- **Fabric API** installed in your Fabric profile mods directory.
+- **[Controlify](https://modrinth.com/mod/controlify?version=26.1.2&loader=fabric#download)** mod installed in your Fabric profile mods directory.
+- **[Fabric API](https://modrinth.com/mod/fabric-api?version=26.1.2#download)** installed in your Fabric profile mods directory.
 
 ---
 

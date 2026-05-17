@@ -24,3 +24,5 @@ Thumbs.db
 
 # Local developer configuration
 local.properties
+dev_cmds.md
+backup_mods/
