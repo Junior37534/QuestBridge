@@ -1,8 +1,6 @@
-# Gradle files
 .gradle/
 build/
 
-# IDE specific files
 .idea/
 *.iml
 *.ipr
@@ -15,14 +13,11 @@ bin/
 out/
 .vscode/
 
-# Operating System files
 .DS_Store
 Thumbs.db
 
-# Log files
 *.log
 
-# Local developer configuration
 local.properties
 dev_cmds.md
-backup_mods/
+MR_README.md

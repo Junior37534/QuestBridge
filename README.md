@@ -6,8 +6,8 @@
   <a href="#license">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
   </a>
-  <a href="https://github.com/Junior37534/MineQuest/releases">
-    <img src="https://img.shields.io/github/v/release/Junior37534/MineQuest.svg?color=blue" alt="Release" />
+  <a href="https://github.com/Junior37534/QuestBridge/releases">
+    <img src="https://img.shields.io/github/v/release/Junior37534/QuestBridge.svg?color=blue" alt="Release" />
   </a>
   <a href="#requirements">
     <img src="https://img.shields.io/badge/Platform-Meta%20Quest%203%20%2F%203S%20%2F%202-brightgreen.svg" alt="Platform: Meta Quest 3 / 3S / 2" />
@@ -45,7 +45,7 @@ Ensure all of the following requirements are met before starting:
 
 - **Meta Quest 3** (Tested) | **Quest 3S & 2** (Supported).
 - **Developer Mode Enabled** on the headset. Refer to the [Official Meta Developer Guide](https://developer.oculus.com/documentation/native/android/mobile-device-setup/) for setup steps.
-- **"Seamless Multitasking"** enabled in the headset:
+- **"Seamless Multitasking"** enabled on the headset:
   1. Open Quest Settings.
   2. Navigate to **Experimental**.
   3. Toggle **Seamless Multitasking** to **ON**.
