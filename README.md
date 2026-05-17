@@ -21,10 +21,6 @@ QuestBridge is a Minecraft client-side Fabric mod that bridges Meta Quest 3 cont
 
 ---
 
-## Demo
-
-Confira o mod funcionando na prática com o player abaixo (carregando o ambiente 3D dinâmico ao fundo e a tela do jogo em foco no Meta Quest 3):
-
 <p align="center">
   <video src="https://github.com/user-attachments/assets/b3d941bd-ead1-49a7-99f9-02467f74109c" width="100%" controls>
     Seu navegador não suporta a exibição de vídeos HTML5.
@@ -47,63 +43,58 @@ Confira o mod funcionando na prática com o player abaixo (carregando o ambiente
 
 Ensure all of the following requirements are met before starting:
 
-- **Meta Quest 3, 3S, or 2** (actively developed and tested on Quest 3; should work on Quest 2 and 3S as well).
+- **Meta Quest 3** (Tested) | **Quest 3S & 2** (Supported).
 - **Developer Mode Enabled** on the headset. Refer to the [Official Meta Developer Guide](https://developer.oculus.com/documentation/native/android/mobile-device-setup/) for setup steps.
 - **"Seamless Multitasking"** enabled in the headset:
   1. Open Quest Settings.
   2. Navigate to **Experimental**.
   3. Toggle **Seamless Multitasking** to **ON**.
 
-  > [!IMPORTANT]
-  > Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
+> [!IMPORTANT]
+> Without Seamless Multitasking enabled, the browser background will freeze or terminate when Minecraft comes into focus.
 
   <p align="center">
     <img src="https://github.com/user-attachments/assets/93bbc0df-a2f2-407d-a402-854b465cf19f" width="600" alt="Enable Seamless Multitasking Screenshot" />
   </p>
 
-- **"Disable Hand Gestures"** (Highly recommended to avoid controller input conflicts):
-  1. Open Quest Settings.
-  2. Navigate to **Movement Tracking** (or **Devices** -> **Hands and Controllers**).
-  3. Turn off or adjust **Hand Tracking / Gestures** to prevent accidental pinch gestures from disrupting controller beam/joystick inputs.
+- **"Disable Gestures" in Amethyst** (Optional)
+  1. Launch Amethyst-Android on the Quest.
+  2. Navigate to **Settings** -> **Control Customizations**.
 
   <p align="center">
-    <img src="https://github.com/user-attachments/assets/95897783-abe5-45eb-802b-91f0b846d27a" width="600" alt="Disable Hand Gestures Screenshot" />
+    <img src="https://github.com/user-attachments/assets/95897783-abe5-45eb-802b-91f0b846d27a" width="600" alt="Disable Gestures in Amethyst Screenshot" />
   </p>
 
-- **Minecraft: Java Edition** running via the **Amethyst-Android** launcher:
-  1. Download the latest APK from the [Amethyst Releases Page](https://github.com/AngelAuraMC/Amethyst-Android/releases).
-  2. Log in using your Microsoft Account.
-  3. Launch vanilla Minecraft once to generate required engine files.
-  4. Create and configure a **Fabric** profile.
-- **[Controlify](https://modrinth.com/mod/controlify?version=26.1.2&loader=fabric#download)** mod installed in your Fabric profile mods directory.
-- **[Fabric API](https://modrinth.com/mod/fabric-api?version=26.1.2#download)** installed in your Fabric profile mods directory.
+- **[Amethyst-Android](https://github.com/AngelAuraMC/Amethyst-Android/releases)** launcher installed.
+- **[Controlify](https://modrinth.com/mod/controlify?version=26.1.2&loader=fabric#download)** and **[Fabric API](https://modrinth.com/mod/fabric-api?version=26.1.2#download)** installed in your mods folder.
 
 ---
 
 ## Installation
 
-1. **Install Amethyst-Android**: Install the Amethyst APK on your Meta Quest 3 via SideQuest or ADB.
+1. **Install Amethyst-Android**: Install the **[Amethyst APK](https://github.com/AngelAuraMC/Amethyst-Android/releases)** on your **MetaQuest** by opening the APK file (or via SideQuest or ADB).
 2. **Launch Vanilla Once**: Open Amethyst, log in, and start vanilla Minecraft. Once the main menu loads, exit the game.
 3. **Configure Fabric Profile**: Inside Amethyst, create a new Fabric profile.
 4. **Access the Game Directory**:
-   - Open your favorite Android File Manager (e.g., Amaze, CX File Explorer) on the Quest.
-   - Navigate to `/sdcard/Android/data/org.angelauramc.amethyst/files/.minecraft/`.
-   - Ensure "Show Hidden Files" is enabled in your file manager settings.
+   - Inside the Amethyst-Android app, select your Fabric profile and click **Open Game Directory**.
+   - This launches the system's native Android file explorer directly in the active game directory.
+   - *Tip:* If no files or folders appear, click the **three dots** in the top right-hand corner of the file explorer and select **Show Hidden Files**.
 5. **Install Mods**:
-   - Download the latest `questbridge-x.y.z.jar` from the [Releases](#) tab of this repository.
-   - Place the JAR into the `/sdcard/Android/data/org.angelauramc.amethyst/files/.minecraft/mods/` directory alongside `Controlify` and the `Fabric API`.
+   - Locate the **`mods`** directory inside the opened folder (create it if it doesn't exist).
+   - Place the downloaded `questbridge-x.y.z.jar` into this directory alongside **Controlify** and the **Fabric API**.
 
 ---
 
 ## Usage
 
 <!-- SCREENSHOT: WebXR controller.html UI interface on the Meta Quest Browser showing the Environment Grid and Haptic Slider -->
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f9f341c3-f6ca-4203-9fd5-8395bb54f8f3" width="300" alt="QuestBridge Web UI Interface" />
+</p>
 
 1. **Launch Minecraft**: Open Amethyst and boot the game using your configured Fabric profile.
 2. **Launch Quest Browser**: Open the native Meta Quest Browser and navigate to:
-   ```text
-   http://localhost:7373
-   ```
+    > http://localhost:7373
 3. **Select Environment**: Pick your preferred theme on the Web UI (e.g., **Pass** for Mixed Reality Passthrough, **✦ Space** for the custom 3D cosmos background).
 4. **Enter VR**:
    - Click the **Enter VR** button on the page.
@@ -111,14 +102,48 @@ Ensure all of the following requirements are met before starting:
 5. **Position Minecraft**:
    - Press the **Meta button** on the right controller to bring up your Quest 2D app panel.
    - Drag the Minecraft window into a comfortable 3D space in front of you.
-6. **Controller Positioning / Avoid Pointer Lock**:
- > [!IMPORTANT]
- > **Do not point your controller beams directly at the Minecraft window while playing.** 
-   > Doing so will shift the headset's focus away from the QuestBridge browser tab and break input capture. Keep your controllers aimed slightly downward or away from the panel while executing actions.
-   > 
-   > *Note: Pointing directly at the panel remains useful when navigating Minecraft’s inventories, chat, or game settings.*
+
+> [!NOTE]
+> While playing, keep your controller pointer beams aimed slightly away or downwards from the 2D Minecraft window. Pointing the Quest beam directly at the Minecraft window shifts system focus to it, which pauses the background browser's input bridge. 
+> 
+> *Aiming directly at the window remains useful when navigating inventories, game menus, settings.*
 
 <!-- SCREENSHOT: Final setup showcasing the immersive WebGL space environment with the Minecraft Java panel correctly positioned -->
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/701fdfc8-7b12-48da-b32e-ec60706dc410" width="100%" alt="Minecraft Immersive 360 Environment View 1" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fcfb368d-794c-4b18-8722-69ce3168aae1" width="100%" alt="Minecraft Immersive 360 Environment View 2" />
+</p>
+
+---
+
+## Amethyst Custom Control Layout (Recommended)
+
+To make standalone play much easier (such as opening the `ESC` menu or virtual keyboard `T` for chat without a physical keyboard), you can import the custom QuestBridge control map preset provided in this repository.
+
+### How to Import:
+1. Download or copy the [questbridge_cmap.json](amethyst/questbridge_cmap.json) file.
+2. Place it on your Quest headset's internal storage inside the Amethyst custom controls import folder.
+3. Open **Amethyst-Android** on your Quest headset.
+4. Navigate to **Settings** -> **Control Customizations**.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/97ef61c1-347c-4d74-8227-2b1983c347fa" width="600" alt="Step 2: Click Edit Custom Controls" />
+</p>
+
+5. Select **Edit Custom Controls**.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c1607eed-348c-4ceb-a564-05fe97f6d556" width="600" alt="Step 3: Click the Gear Icon" />
+</p>
+
+6. Click the **Gear icon** located at the top-center of the screen.
+7. Click **Load** and select `questbridge_cmap.json`.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9409bed-aea5-4cd7-a838-ffb72aeddd42" width="600" alt="Step 4: Load questbridge_cmap.json" />
+</p>
 
 ---
 

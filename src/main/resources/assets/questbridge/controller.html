@@ -61,9 +61,9 @@
         }
 
         .main-panel {
-            width: 100%;
+            width: calc(100% - 40px);
             max-width: 420px;
-            height: 100%;
+            height: calc(100% - 40px);
             max-height: 800px;
             background: var(--glass-bg);
             backdrop-filter: blur(30px);
@@ -82,6 +82,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .header-title-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .app-title {
@@ -311,7 +317,10 @@
     <div class="glow-orb"></div>
     <div class="main-panel">
         <div class="header">
-            <div>
+            <div class="header-title-container">
+                <svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 3v2C4 5 2 7 2 12c0 5 2 7 5 7 2 0 3-1 5-1 2 0 3 1 5 1 3 0 5-2 5-7 0-5-2-7-8-7V3c0-.5-.5-1-1-1h-2c-.5 0-1 .5-1 1zm2 4c6.5 0 8 1.5 8 5 0 3.5-1.5 5-4 5-1.5 0-2.5-1-4-1-1.5 0-2.5 1-4 1-2.5 0-4-1.5-4-5 0-3.5 1.5-5 8-5zM8 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1zM12 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1zM16 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1z"/>
+                </svg>
                 <div class="app-title">QuestBridge</div>
                 <!-- <div class="section-label" style="text-transform: none; letter-spacing: 0;">Minecraft VR Bridge for Quest 3</div> -->
             </div>
@@ -324,9 +333,9 @@
         <div class="content">
             <div class="cta-section">
                 <button id="vr-btn" class="vr-btn" disabled>
-                    <svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.92 9.08a2 2 0 0 0-1.74-1.08h-4.3l-2-4.1a2.05 2.05 0 0 0-1.88-1.15 2 2 0 0 0-1.88 1.15l-2 4.1h-4.3a2 2 0 0 0-1.74 1.08 2 2 0 0 0-.15 2l2.8 5.76a2 2 0 0 0 1.8 1.16h8.94a2 2 0 0 0 1.8-1.16l2.8-5.76a2 2 0 0 0-.15-2zm-12.7 7H5.68l-2-4.1h3.76a2 2 0 0 0 1.9-1.3l1.52-3.14L12 10.4l1.14-2.86 1.52 3.14a2 2 0 0 0 1.9 1.3h3.76l-2 4.1h-3.54z"/>
-                    </svg>
+                    <!-- <svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3v2C4 5 2 7 2 12c0 5 2 7 5 7 2 0 3-1 5-1 2 0 3 1 5 1 3 0 5-2 5-7 0-5-2-7-8-7V3c0-.5-.5-1-1-1h-2c-.5 0-1 .5-1 1zm2 4c6.5 0 8 1.5 8 5 0 3.5-1.5 5-4 5-1.5 0-2.5-1-4-1-1.5 0-2.5 1-4 1-2.5 0-4-1.5-4-5 0-3.5 1.5-5 8-5zM8 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1zM12 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1zM16 10c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 .6 0 1-.4 1-1v-2c0-.6-.4-1-1-1z"/>
+                    </svg> -->
                     Enter VR
                 </button>
             </div>
@@ -334,14 +343,7 @@
             <div class="setting-group">
                 <div class="section-label">Haptic Feedback</div>
                 <div class="control-row">
-                    <span style="font-size: 14px; font-weight: 500;">Enable Haptics</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="haptic-toggle" checked>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="control-row">
-                    <span style="font-size: 14px; font-weight: 500;">Intensity</span>
+                    <span style="font-size: 14px; font-weight: 500;">Haptics Intensity</span>
                     <span id="haptic-val" class="ws-text" style="font-size: 13px;">100%</span>
                 </div>
                 <div class="control-row" style="padding-top: 0; padding-bottom: 0px; background: transparent;">
@@ -389,8 +391,8 @@
 
         <div class="footer">
             <div class="footer-links">
-                <a href="#" class="footer-link">GitHub</a>
-                <a href="#" class="footer-link">Docs</a>
+                <a href="https://github.com/Junior37534/QuestBridge" class="footer-link">GitHub</a>
+                <!-- <a href="#" class="footer-link">Docs</a> -->
             </div>
             <div class="quest-badge">Made for Meta Quest</div>
         </div>
@@ -403,7 +405,7 @@
         const wsUrl = `ws://${window.location.hostname || "localhost"}:7374`;
         let socket = null, wsConnected = false, xrSession = null, xrRefSpace = null, gl = null;
         let currentEnv = 'passthrough', skyboxTexture = null, skyboxImage = null;
-        let hapticToggle, hapticSlider, hapticValText, envBtns, skyboxUpload, skyboxControls, uploadStatus;
+        let hapticSlider, hapticValText, envBtns, skyboxUpload, skyboxControls, uploadStatus;
         const dbName = "QuestBridgeDB"; let db;
 
         // --- WebSocket ---
@@ -415,9 +417,7 @@
             socket.onmessage = (e) => {
                 try {
                     const data = JSON.parse(e.data);
-                    // Ensure hapticToggle is resolved properly even if not instantiated in initSettings
-                    const toggleElem = document.getElementById('haptic-toggle');
-                    if (data.type === 'haptic' && xrSession && toggleElem && toggleElem.checked) {
+                    if (data.type === 'haptic' && xrSession && parseInt(hapticSlider.value) > 0) {
                         const intensity = (parseInt(hapticSlider.value) / 100) * data.intensity;
                         xrSession.inputSources.forEach((s, i) => {
                             if (s.gamepad?.hapticActuators) {
@@ -440,13 +440,27 @@
             dbReq.onupgradeneeded = (e) => { db = e.target.result; db.createObjectStore("settings"); };
             dbReq.onsuccess = (e) => { db = e.target.result; loadStoredImage(); };
 
-            const savedS = localStorage.getItem('qb_haptics_strength'); if (savedS !== null) { hapticSlider.value = savedS; hapticValText.textContent = savedS + '%'; }
+            const updateHapticValText = (val) => {
+                hapticValText.textContent = parseInt(val) === 0 ? "Disabled" : val + '%';
+            };
+
+            const savedS = localStorage.getItem('qb_haptics_strength');
+            if (savedS !== null) {
+                hapticSlider.value = savedS;
+                updateHapticValText(savedS);
+            } else {
+                updateHapticValText(hapticSlider.value);
+            }
+
             const savedE = localStorage.getItem('qb_env'); if (savedE) { 
                 currentEnv = savedE; envBtns.forEach(b => b.classList.toggle('active', b.dataset.env === currentEnv));
                 skyboxControls.classList.toggle('hidden', currentEnv !== 'skybox');
             }
 
-            hapticSlider.oninput = () => { hapticValText.textContent = hapticSlider.value + '%'; localStorage.setItem('qb_haptics_strength', hapticSlider.value); };
+            hapticSlider.oninput = () => {
+                updateHapticValText(hapticSlider.value);
+                localStorage.setItem('qb_haptics_strength', hapticSlider.value);
+            };
             envBtns.forEach(btn => {
                 btn.onclick = () => {
                     currentEnv = btn.dataset.env; localStorage.setItem('qb_env', currentEnv);
@@ -612,7 +626,7 @@
 
         function onSessionStarted(session) {
             xrSession = session; document.getElementById('vr-btn').innerHTML = "Exit VR";
-            session.addEventListener('end', () => { xrSession = null; document.getElementById('vr-btn').innerHTML = `<svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.92 9.08a2 2 0 0 0-1.74-1.08h-4.3l-2-4.1a2.05 2.05 0 0 0-1.88-1.15 2 2 0 0 0-1.88 1.15l-2 4.1h-4.3a2 2 0 0 0-1.74 1.08 2 2 0 0 0-.15 2l2.8 5.76a2 2 0 0 0 1.8 1.16h8.94a2 2 0 0 0 1.8-1.16l2.8-5.76a2 2 0 0 0-.15-2zm-12.7 7H5.68l-2-4.1h3.76a2 2 0 0 0 1.9-1.3l1.52-3.14L12 10.4l1.14-2.86 1.52 3.14a2 2 0 0 0 1.9 1.3h3.76l-2 4.1h-3.54z"/></svg> Enter VR`; });
+            session.addEventListener('end', () => { xrSession = null; document.getElementById('vr-btn').innerHTML = `Enter VR`; });
             gl = document.getElementById('xr-canvas').getContext('webgl', { xrCompatible: true, alpha: true });
             initRenderer(); if (skyboxImage) updateSkyboxTexture();
             session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
@@ -641,16 +655,13 @@
                 });
             }
             let l=null, r=null;
-            const hVal = parseInt(hapticSlider.value);
-            if (hVal > 0) {
-                for(let s of xrSession.inputSources) {
-                    if(s.gamepad) {
-                        const d = { axes: Array.from(s.gamepad.axes), buttons: s.gamepad.buttons.map(b=>({pressed:b.pressed, value:b.value})) };
-                        if(s.handedness==='left') l=d; else r=d;
-                    }
+            for(let s of xrSession.inputSources) {
+                if(s.gamepad) {
+                    const d = { axes: Array.from(s.gamepad.axes), buttons: s.gamepad.buttons.map(b=>({pressed:b.pressed, value:b.value})) };
+                    if(s.handedness==='left') l=d; else r=d;
                 }
-                if(wsConnected && (l||r)) socket.send(JSON.stringify({left:l||{axes:[0,0,0,0],buttons:[]}, right:r||{axes:[0,0,0,0],buttons:[]}}));
             }
+            if(wsConnected && (l||r)) socket.send(JSON.stringify({left:l||{axes:[0,0,0,0],buttons:[]}, right:r||{axes:[0,0,0,0],buttons:[]}}));
         }
 
         initSettings(); connectWebSocket();

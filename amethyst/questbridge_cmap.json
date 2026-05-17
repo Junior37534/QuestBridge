@@ -1,0 +1,77 @@
+{
+  "mControlDataList": [
+    {
+      "bgColor": 1291845632,
+      "cornerRadius": 0.0,
+      "displayInGame": true,
+      "displayInMenu": true,
+      "dynamicX": "0.0 * ${screen_width}",
+      "dynamicY": "0.03675906 * ${screen_height}",
+      "height": 28.0,
+      "isSwipeable": false,
+      "isToggle": false,
+      "keycodes": [
+        256,
+        0,
+        0,
+        0
+      ],
+      "name": "ESC",
+      "opacity": 0.61,
+      "passThruEnabled": false,
+      "strokeColor": -1,
+      "strokeWidth": 0.0,
+      "width": 36.0
+    },
+    {
+      "bgColor": 1291845632,
+      "cornerRadius": 0.0,
+      "displayInGame": false,
+      "displayInMenu": true,
+      "dynamicX": "0.971083 * ${screen_width} - ${width}",
+      "dynamicY": "0.0 * ${screen_height}",
+      "height": 40.0,
+      "isSwipeable": false,
+      "isToggle": false,
+      "keycodes": [
+        292,
+        295,
+        0,
+        0
+      ],
+      "name": "F3+F6",
+      "opacity": 1.0,
+      "passThruEnabled": false,
+      "strokeColor": -1,
+      "strokeWidth": 0.0,
+      "width": 46.4
+    },
+    {
+      "bgColor": 1291845632,
+      "cornerRadius": 0.0,
+      "displayInGame": true,
+      "displayInMenu": true,
+      "dynamicX": "0.0 * ${screen_width} + (px(36.0) / 100.0 * ${preferred_scale}) + ${margin}",
+      "dynamicY": "0.03675906 * ${screen_height}",
+      "height": 28.0,
+      "isSwipeable": false,
+      "isToggle": false,
+      "keycodes": [
+        84,
+        0,
+        0,
+        0
+      ],
+      "name": "T",
+      "opacity": 0.6,
+      "passThruEnabled": false,
+      "strokeColor": -1,
+      "strokeWidth": 0.0,
+      "width": 24.0
+    }
+  ],
+  "mDrawerDataList": [],
+  "mJoystickDataList": [],
+  "scaledAt": 100.0,
+  "version": 8
+}
