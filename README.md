@@ -102,7 +102,7 @@ The result: a flat 2D Minecraft panel floating in your mixed reality space, full
 ## Usage
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f9f341c3-f6ca-4203-9fd5-8395bb54f8f3" width="300" alt="QuestBridge Web UI — Environment selector and Haptic Intensity slider" />
+  <img src="https://github.com/user-attachments/assets/08bfc3de-0040-4294-b6f7-e2ee1b656012" width="300" alt="QuestBridge Web UI — Environment selector and Haptic Intensity slider" />
 </p>
 
 1. **Launch Minecraft**: Open Amethyst and boot with your Fabric profile.
